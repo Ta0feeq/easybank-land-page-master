@@ -65,7 +65,8 @@ header {
   color: var(--white);
 }
 
-.header button {
+.open-menu,
+.close-menu  {
   display: none;
   background-color: transparent;
   border: none;
@@ -246,6 +247,7 @@ footer {
   width: 80%;
   margin: 0 auto;
   display: flex;
+  gap: 32px;
   justify-content: space-between;
 }
 
@@ -333,6 +335,20 @@ footer {
     width: 90%;
   }
 
+  /* footer section  */
+  .footer{
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .footer-two a {
+    display: block;
+    background-image: var(--linear);
+    padding: 16px 30px;
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 14px;
+  }
 
 }
 
@@ -344,14 +360,19 @@ footer {
     display: none;
   }
 
-  .mobile-nav {
-    min-height: 100vh;
-    width: 100%;
+  .mobile-nav.open {
     display: block;
-    background: linear-gradient(0deg, rgba(45,49,77,0.5327380952380952) 19%, rgba(45,49,77,1) 100%);
+  }
+
+  .mobile-nav {
+    height: 100vh;
+    width: 100%;
+    /* display: block; */
+    background: linear-gradient(0deg, rgba(45, 49, 77, 0.5327380952380952) 19%, rgba(45, 49, 77, 1) 100%);
     position: fixed;
     top: 70px;
     padding-top: 40px;
+    /* animation: slideIn 0.5s ease; */
   }
 
   .mobile-nav nav {
@@ -370,7 +391,7 @@ footer {
     color: var(--dark-Blue);
   }
 
-  .header button {
+  .open-menu{
     display: block;
   }
 
@@ -433,6 +454,15 @@ footer {
     font-size: 34px;
 
   }
+
+  /* footer section  */
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer-one, .footer-two{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -469,4 +499,52 @@ footer {
     font-size: 20 px;
   }
 
+  /* footer section  */
+  .footer-one{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-two{
+    align-items: center;
+    gap: 32px;
+  }
+
+  .footer-two p{
+    font-size: 16px;
+  }
+
+  .socials{
+    margin: 32px 0;
+  }
+
+  .link-mobile{
+    margin-bottom: 18px;
+  }
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
